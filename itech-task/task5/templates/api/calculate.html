@@ -1,0 +1,29 @@
+{% extends 'api/base.html' %}
+{% block content %}
+
+<div class="container bg-light p-5">
+
+  {% if ans %}
+  <h1>Answer is {{ ans }}</h1>
+  {% else %}
+  <h1>Task 5</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group m-2">
+      <label for="inputx">Enter value of X:</label>
+      <input type="number" class="form-control" name="x" id="inputx" placeholder="Enter value of X">
+    </div>
+    <div class="form-group m-2">
+      <label for="inputn">Enter value of N:</label>
+      <input type="number" class="form-control" name="n" id="inputn" placeholder="Enter value of N">
+    </div>
+    <button type="submit" class="btn btn-primary m-2">Submit</button>
+
+  </form>
+
+  {% endif %}
+
+  </div>
+
+{% endblock %}
